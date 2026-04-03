@@ -1,40 +1,114 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 Khaalihai – QR Based Lead Collection System (Frontend)
 
-## Getting Started
+This project is a simple and clean landing page built to collect user interest for upcoming launches in different areas using QR codes.
 
-First, run the development server:
+🔥 Overview
 
-```bash
+Users scan a QR code → Land on the page → Fill the form → Get confirmation.
+
+The system captures user details along with the area from which they came.
+
+🎯 Features
+📍 Area-based dynamic landing page (via URL params)
+🧾 Lead collection form (Name, Phone, Location)
+✅ Form validation (required fields + phone check)
+🚫 Duplicate handling (based on phone number)
+🎉 Success message with dynamic area display
+🎨 Modern UI with glassmorphism design (Tailwind CSS)
+🧠 How It Works
+
+Each QR code contains a unique URL:
+
+/campaigns/qr-coming-soon?area=sangam-vihar
+When a user scans the QR:
+The landing page reads the area from the URL
+Displays it dynamically in the UI
+User fills the form:
+Data is sent to backend API
+On success:
+A success screen is shown with the same area
+🛠 Tech Stack
+Next.js (App Router)
+TypeScript
+Tailwind CSS
+REST API Integration
+📁 Project Structure
+/app
+  /campaigns
+    /qr-coming-soon
+      page.tsx
+      /components
+        LandingForm.tsx
+        Heading.tsx
+        SuccessMessage.tsx
+
+/components
+  /ui
+    InputField.tsx
+    Button.tsx
+
+/services
+  lead.service.ts
+
+/types
+  lead.ts
+🔌 API Integration
+POST /submissions
+
+Used to submit lead data.
+
+Request:
+{
+  "name": "John Doe",
+  "phone": "1234567890",
+  "location": "Delhi",
+  "area": "sangam-vihar",
+  "source": "qr"
+}
+Response:
+{
+  "success": true,
+  "message": "Thank you! We'll notify you when we launch in your area."
+}
+⚙️ Setup Instructions
+
+Clone the repository
+
+git clone <your-repo-url>
+
+Install dependencies
+
+npm install
+
+Run development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000/campaigns/qr-coming-soon
+🌐 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project can be deployed easily using platforms like:
 
-## Learn More
+Vercel (recommended for Next.js)
+Netlify
 
-To learn more about Next.js, take a look at the following resources:
+After deployment, connect your domain (GoDaddy) and use QR codes with your live URLs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🚀 Future Improvements
+Admin panel to view submissions
+QR scan tracking & analytics
+Update/edit form for duplicate users
+Better error UI (inline messages instead of alerts)
+🤝 Contribution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is currently under development. Contributions and improvements are welcome.
 
-## Deploy on Vercel
+📌 Note
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This is a frontend-only implementation focused on lead collection and UI flow. Backend APIs are integrated but maintained separately.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Khaalihai.co
->>>>>>> cb3221c853524aeea849af6f7a40001cf9f4a943
+💡 Author
+
+Built with focus and learning mindset 💯
