@@ -4,4 +4,5 @@ export interface LeadPayload {
   location: string;
   area: string;
   source: string;
+  userType: string;
 }

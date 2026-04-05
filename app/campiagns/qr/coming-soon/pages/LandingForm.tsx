@@ -18,7 +18,8 @@ export default function LandingForm() {
     phone: "",
     location: "",
     area: "",
-    source: "",
+    source: "qr",
+    userType: "",
   });
 
   useEffect(() => {
@@ -79,6 +80,8 @@ export default function LandingForm() {
         <Heading area={area} />
 
         <form onSubmit={handleSubmit} className="space-y-3">
+
+
           <InputField
             name="name"
             placeholder="Your Name"
@@ -100,9 +103,37 @@ export default function LandingForm() {
             onChange={handleChange}
           />
 
+          <div className="flex w-full gap-4">
+            <button
+            type="button"
+            onClick={() => 
+              setFormData({ ...formData, userType: "owner"})
+            }
+            className={`flex-1 py-3 rounded-xl border backdrop-blur-md transition-all duration-300 w-30 font-medium ${
+              formData.userType === "owner" ? "bg-white text-black border-white-400 shadow-lg scale-[1.03]" : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"
+            }`}
+          >
+          Owner
+          </button>
+
+
+          <button
+            type="button"
+            onClick={() => 
+              setFormData({ ...formData, userType: "renter"})
+            }
+            className={`flex-1 py-3 rounded-xl border backdrop-blur-md transition-all duration-300 w-30 font-medium ${
+              formData.userType === "renter" ? "bg-white text-black border-white-400 shadow-lg scale-[1.03]" : "bg-white/5 text-gray-300 border-white/10 hover:bg-white/10"
+            }`}
+          >
+          Renter
+          </button>
+          </div>
+          
+
           <Button loading={loading}>Join Waitlist</Button>
 
-          <p className="text-xs text-gray-400 text-center mt-4">
+          <p className="text-xs text-gray-400 text-center mt-4 font-bold">
   We respect your privacy. No spam.
 </p>
         </form>
