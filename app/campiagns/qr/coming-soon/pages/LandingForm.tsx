@@ -55,6 +55,11 @@ export default function LandingForm() {
       return;
     }
 
+    if(!formData.userType ){
+      alert("Please select Owner or Renter");
+      return;
+    }
+
     try {
       setLoading(true);
 
