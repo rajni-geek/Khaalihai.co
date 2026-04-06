@@ -2,7 +2,7 @@ import { LeadPayload } from "@/app/types/lead";
 
 export const submitLead = async (data: LeadPayload) => {
   const response = await fetch(
-    "https://qr-code-generation-yaaa.onrender.com/api/submissions",
+    "https://api.qr.examresults.org.in/api/submissions",
     {
       method: "POST",
       headers: {
