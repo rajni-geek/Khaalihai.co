@@ -71,11 +71,6 @@ export default function LandingForm() {
     }
   };
 
-  if (!formData.userType){
-    alert("Please select if you are an owner or renter");
-    return;
-  }
-
   if (submitted) return <SuccessMessage area={area} />;
 
   return (
