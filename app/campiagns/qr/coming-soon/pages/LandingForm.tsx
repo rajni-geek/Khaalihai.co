@@ -16,7 +16,7 @@ export default function LandingForm() {
   const [errors, setErrors] = useState({
     name: "",
     phone: "",
-    Location: "",
+    location: "",
   })
 
 
@@ -67,7 +67,7 @@ export default function LandingForm() {
       }
     }
 
-    if(errors.name || errors.phone || errors.Location) {
+    if(errors.name || errors.phone || errors.location) {
       alert("Please fix errors before submitting");
       return;
     }
