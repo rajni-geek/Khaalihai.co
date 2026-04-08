@@ -52,7 +52,7 @@ export default function LandingForm() {
       return "Invalid phone number. Enter a 10 digit number.";
   }
 
-  if(!formData.location || !/^[a-zA-Z\s]+$/.test(formData.location)) {
+  if(!formData.location || !/^[a-zA-Z\s-]+$/.test(formData.location)) {
       return "Invalid location. Only letters and spaces allowed.";
   }
 
