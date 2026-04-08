@@ -89,7 +89,7 @@ export default function LandingForm() {
 
     // Location validation
     if (name === "location") {
-      if (value && !/^[a-zA-Z\s]+$/.test(value)) {
+      if (value && !/^[a-zA-Z\s-]+$/.test(value)) {
         error = "Only letters and spaces allowed";
       }
     }
